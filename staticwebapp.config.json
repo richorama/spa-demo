@@ -12,6 +12,10 @@
   },
   "routes": [
     {
+      "route": "/403.html",
+      "allowedRoles": ["anonymous", "authenticated"]
+    },
+    {
       "route": "/*",
       "allowedRoles": ["viewer"]
     }
@@ -22,7 +26,8 @@
       "statusCode": 302
     },
     "403": {
-      "rewrite": "/403.html"
+      "redirect": "/403.html",
+      "statusCode": 302
     }
   }
 }
